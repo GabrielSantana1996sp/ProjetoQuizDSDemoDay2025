@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Quiz ETEC</title>
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <div class="login-container">
+    <div class="left">
+      <h1><span>QUIZ</span></h1>
+
+      <h2>Login</h2>
+      <br>
+      <form id="form-login">
+        <!-- INPUT PARA O USUÁRIO DIGITAR O EMAIL DELE  -->
+        <div class="input-group">
+          <label for="email">Usuário</label>
+          <input type="text" id="email" placeholder="Digite seu usuário" required>
+        </div>
+
+        <div class="input-group">
+          <!-- INPUT PARA O USUÁRIO DIGITAR A SENHA DELE  -->
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Digite sua senha" required>
+        </div>
+
+        <div class="option">
+          <!-- QUANDO CLICADO VAI PARA A TELA DE ESQUECISENHA  -->
+          <a href="./esquecisenha">Esqueceu sua senha?</a>
+        </div>
+        <!-- QUANDO CLICADO, VÊ SE TEM REALMENTE ESSE LOGIN E VAI PARA A TELA INICIAL DO QUIZ  -->
+        <button type="submit" id="btnLogin" class="btn-login">Login</button>
+
+
+        <!-- CASO ELE NÃO TENHA UMA CONTA, QUANDO CLICAR VAI PARA A TELA DE CADFASTRO -->
+        <p class="signup">Ou <a href="cadastro.html">inscrever-se</a></p>
+      </form>
+    </div>
+
+    <div class="right">
+      <!-- IMAGEM VERDE DA DIREITA  -->
+      <img src="img/ImgVerde-Cdst-Logn.jpg" alt="fundo verde decorativo">
+    </div>
+  </div>
+</body>
+<script>
+
+  const btnLogin = document.querySelector("#form-login")
+
+    btnLogin.addEventListener("submit", async e => {
+
+    e.preventDefault()
+
+    const email = document.querySelector("#email").value
+    const senha = document.querySelector("#senha").value
+
+    await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "content-Type":"application/json"
+      },
+
+      body: JSON.stringify({
+        email: email,
+        senha: senha
+      })
+    })
+    .then((response) => {
+      if(response.status === 200){
+        alert("Logado com sucesso")
+        location.href = "/disciplinaEcurso"
+      }else{
+        alert("email ou senha invalidos")
+      }
+      return response.json()
+    })
+    .then((res) => {
+      localStorage.clear
+      localStorage.setItem("token", res.token)
+    })
+    .catch((err) => alert("falha no login", err))
+
+    e.target.reset()
+
+  })
+
+</script>
+
+</html>

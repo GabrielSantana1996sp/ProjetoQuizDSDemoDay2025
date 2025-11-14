@@ -1,0 +1,304 @@
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #0A3940;
+    color: white;
+  }
+  .container ul li {
+  background: rgba(255, 255, 255, 0.08);
+  background: #2D7A72;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;}
+  /* Header */
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #1699B0;
+    padding: 14px 16px 12px 16px;
+    user-select: none;
+    gap: 10px;
+  }
+  .brand-left {
+    font-weight: 900;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    color: black;
+    position: relative;
+  }
+  /* QUIZ educacional text */
+  .quiz {
+    font-weight: 700;
+  }
+  /* Etec logo placeholder - placed to right of quiz text in header */
+  .etec-logo-placeholder {
+    width: 142px;  /* same width as in image */
+    height: 40px;  /* same height as in image */
+    /* background-color or background-image to be added by user */
+  }
+  /* Menu button */
+  .menu-btn {
+    margin-left: auto;
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+  .menu-btn span {
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    border-radius: 3px;
+  }
+  /* Main container */
+  main {
+    display: flex;
+    height: calc(100vh - 66px);
+  }
+  /* Left panel */
+  .left-panel {
+  width: 190px;
+  min-height: 100%;              /* ocupa pelo menos a altura da página */
+  background-color: #1699B0;
+  padding: 29px 12px 47% 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+  
+  .left-panel h2 {
+    align-self: flex-start;
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .position-badge {
+    background-color: #e6be6f;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    width: 90px;
+    padding: 5px 0;
+    border-radius: 60% 60% 60% 60% / 50% 50% 50% 50%; /* cloud shape */
+    text-align: center;
+    margin-bottom: 30px;
+    user-select: none;
+  }
+  .home-button {
+    background-color: #E6BE6F;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+    position: relative;
+  }
+  .home-button::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    background: url('data:image/svg+xml;utf8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9.75L12 3L21 9.75V21H15V15H9V21H3V9.75Z"/></svg>') no-repeat center/contain;
+  }
+  /* Right panel */
+  .right-panel {
+    flex: 1;
+    padding: 10px 24px 15px 24px;
+    user-select: none;
+  }
+ .top3-container {
+  background: #00303f;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 15px 35px 15px;
+  margin: 14px 0 0 0; /* separa da nav se a nav não for fixa */
+  /* se a nav for fixa, use margin-top igual à altura da nav: */
+  margin-top: 64px;
+  position: relative;
+  user-select: none;}
+  
+  .user-position-top {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .user-position-top .rank-badge {
+    background: white;
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 10px 10px 0 0;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+  .user-position-top.second .rank-badge {
+    color: #1699B0;
+  }
+  .user-position-top.first .rank-badge {
+    color: #E6BE6F;
+  }
+  .user-position-top.third .rank-badge {
+    color: #1699B0;
+  }
+  .user-position-top .username {
+    margin-bottom: 15px;
+  }
+  .user-position-top .score {
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  /* Ranking list container */
+  .ranking-list {
+    background: #1699B0;
+    border-radius: 20px;
+    padding: 18px 20px;
+    max-height: 340px;
+    overflow-y: auto;
+    box-shadow: inset 5px 5px 0 #c4aa5e;
+  }
+  .ranking-list ul {
+    list-style: none;
+  }
+  .ranking-list li {
+    background: white;
+    border-radius: 25px;
+    border: 4px solid #007B7F;
+    box-shadow: 3px 4px 0 #c4aa5e;
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .ranking-list li .left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* reduz o espaço entre username e outros elementos à esquerda */
+}
+  .rank-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #E6BE6F;
+    border: 2px solid #828282;
+    box-shadow: 2px 2px 0 #313131;
+    font-weight: 900;
+    font-size: 1.15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+  }
+  .username {
+    white-space: nowrap;
+  }
+  .points {
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+      margin-left: 0px; /* ajuste ou remova para reduzir ainda mais o espaço */
+      gap: 20px;
+  }
+
+  /* === NAVBAR === */
+/* Nav fixa no topo */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;          /* ajuste conforme sua nav */
+  background: #0a2a3a;     /* cor da sua nav */
+  z-index: 1000;           /* ficar acima do conteúdo */
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+/* Conteúdo principal */
+.main-content {
+  padding-top: 64px;       /* mesma altura da nav, para não 'sobressair' por baixo dela */
+}
+
+.navbar a {
+  color: #00CED1; /* azul-esverdeado */
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #FFD700; /* dourado no hover */
+  text-shadow: 0 0 6px #FFD700;
+}
+
+/* === BOTÃO ENTRAR NA NAVBAR === */
+.navbar .entrar {
+  background-color: transparent;
+  border: 2px solid #00CED1;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #00CED1;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.navbar .entrar:hover {
+  background-color: #00CED1;
+  color: #003333;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00CED1;
+}
+
+/* === LOGO DA NAVBAR (QUIZ INTERATIVO) === */
+.logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.robo-img {
+ position: absolute;
+  top: -60px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px; 
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
+  }
+  
+  .linkT {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 200px; 
+    
+  }
+  

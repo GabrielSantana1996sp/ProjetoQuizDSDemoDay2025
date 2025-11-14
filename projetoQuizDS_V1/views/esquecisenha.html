@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Esqueci minha senha</title>
+ <link rel="stylesheet" href="css/esquecisenha.css">
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="title">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1 id="title">QUIZ</h1>
+        <h3><p class="lead">Recuperar acesso</p></h3>
+      </div>
+    </div>
+    <div id="serverMessage" class="message" role="status" aria-live="polite" hidden></div>
+    
+    <form action="" method="post" novalidate>
+      <div>
+        <label for="email" class="">E-mail</label>
+        <br><br>
+        <input 
+        class="ema"
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="Insira o e-mail"
+          required
+          aria-describedby="emailHelp"
+        />
+        <br>
+        <span id="emailHelp" class="note">Você receberá um e-mail com instruções se o endereço estiver cadastrado.</span>
+        <br>
+        <br>
+        
+        <center><button type="submit" class="login-btn">Enviar</button>
+        <br>
+        <br>
+      </div>
+
+      <div class="actions">
+        
+       <ul> 
+        <a class="lin" id="link" href="/">Inicio</a>
+        <a class="lin" id="link" href="/">Inicio</a>
+        <br>
+        <a class="lin" id="link" href="/cadastro">Cadastro</a>
+        
+        </ul>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

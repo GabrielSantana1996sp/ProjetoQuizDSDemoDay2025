@@ -1,0 +1,163 @@
+/* === FONTE PIXELADA === */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Ubuntu:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Momo Trust Display", sans-serif;
+}
+
+/* === FUNDO === */
+body {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url('../img/FundoVerde.jpeg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  overflow-y: auto;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 32, 39, 0.8);
+  padding: 8px 40px; /* antes era 15px 50px — agora mais fino */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+.navbar a {
+  color: #00CED1; /* azul-esverdeado */
+  text-decoration: none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #FFD700; /* dourado no hover */
+  text-shadow: 0 0 6px #FFD700;
+}
+
+/* === BOTÃO ENTRAR NA NAVBAR === */
+.navbar .entrar {
+  background-color: transparent;
+  border: 2px solid #00CED1;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #00CED1;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.navbar .entrar:hover {
+  background-color: #00CED1;
+  color: #003333;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00CED1;
+}
+
+/* === LOGO DA NAVBAR (QUIZ INTERATIVO) === */
+.logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+
+.container {
+   position: relative; 
+  width: 450px;
+  background-color: #008B8B;
+  border-radius: 20px;
+  text-align: center;
+  padding: 60px 30px 40px; 
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 140px; 
+}
+
+/* === TÍTULO CENTRAL (QUIZ INTERATIVO) === */
+.container h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  color: #FFD700; 
+  text-shadow: 2px 2px 0px #004F4F; 
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.robo-img {
+ position: absolute;
+  top: -60px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px; 
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+}
+
+/* === TEXTOS DEBAIXO DO TÍTULO === */
+#SobreTexto,
+#Sobre2Texto {
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* === BOTÕES LOGIN / CADASTRO === */
+.login,
+.cadastrar {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  background-color: #004F4F;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Press Start 2P', cursive;
+  color: #FFD700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.login:hover,
+.cadastrar:hover {
+  background-color: #006666;
+  transform: scale(1.05);
+}
+
+/* === LOGO ETEC NA NAVBAR === */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-etec {
+  height: 65px;
+  width: auto;
+}
+
+b{
+  color: #FFD700;
+}

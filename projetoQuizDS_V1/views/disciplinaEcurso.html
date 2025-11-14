@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escolher Curso e Disciplina</title>
+  <link rel="stylesheet" href="css/DisciplinaECurso.css">
+</head>
+<body>
+  <div class="container">
+
+
+    <input type="checkbox" id="mostrarDisciplinas" hidden>
+
+    <!-- TELA DE CURSOS  -->
+    <div class="tela cursos" id="tela-curso">
+      <h1>Escolha seu Curso</h1>
+    </div>
+
+    <!-- TELA DE DISCIPLINAS -->
+    <div class="tela disciplinas">
+      <h1>Disciplinas de Desenvolvimento de Sistemas</h1>
+
+      <!-- TODAS AS DISCIPLINAS POSSÍVEIS  -->
+      <div class="disciplinas-lista" id="disciplinas-lista">
+        <!-- AS DISCIPLINAS PRECISAM ESTAR NO BANCO -->
+      </div>
+    </div>
+  </div>
+  <script>
+    const telaCurso = document.querySelector("#tela-curso")
+    const disciplinasLista = document.querySelector("#disciplinas-lista")
+
+    fetch("/api/curso", {
+      method: "GET",
+      headers: {
+        "content-Type": "application/json",
+        "bearer": localStorage.getItem("token")
+      }
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json()
+        } else {
+          location.href = "/login"
+        }
+      })
+      .then((result) => {
+        result.forEach(res => {
+          telaCurso.innerHTML += `
+        <label onclick="mostarDisciplina(${res.id})" for="mostrarDisciplinas" class="curso-card">
+        <h2>${res.nome}</h2>
+        </label>
+        `
+        });
+      })
+      .catch((err) => (console.error(err)))
+
+    const mostarDisciplina = (id) => {
+
+      fetch("/api/disciplinaPorCursoId/" + id, {
+        method: "GET",
+        headers: {
+          "content-Type": "application/json",
+          "bearer": localStorage.getItem("token")
+        }
+      })
+        .then((response) => {
+          if (response.status === 200) {
+            return response.json()
+          }
+        })
+        .then((result) => {
+          result.forEach(res => {
+            disciplinasLista.innerHTML += `
+            <div class="disciplina"><h3>${res.nome}</h3><a href="quiz.html?disciplina=${res.id}">Jogar Quiz</a></div>
+            `
+          })
+        })
+        .catch((err) => (console.error(err)))
+    }
+
+  </script>
+</body>
+</html>

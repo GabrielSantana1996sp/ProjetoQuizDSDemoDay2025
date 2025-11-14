@@ -1,0 +1,176 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background:#008080;
+  position: relative;
+}
+
+/* Fundo com imagem de códigos */
+.background {
+  background: #008B8B;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Container principal */
+.login-container {
+  width: 900px;
+  height: 500px;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+/* Parte esquerda (formulário) */
+.left {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #008B8B;
+}
+
+.left h1 span {
+  color: #008B8B;
+}
+
+.left h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #008B8B;
+}
+.senha-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* espaço entre os dois campos */
+}
+
+.senha-group .input-group {
+  flex: 1; /* os dois ocupam o mesmo espaço */
+}
+
+.senha-group .input-group input {
+  width: 100%;
+  max-width: 220px; /* diminui o tamanho */
+}
+
+
+/* Opções extras */
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.option a {
+  text-decoration: none;
+  color:  #008B8B;
+}
+
+/* Botão de cadastro */
+.btn-cadastro {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color:  #008B8B;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cadastro:hover {
+  background-color:  #008B8B;
+}
+
+/* Link de cadastro */
+.signup {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signup a {
+  color:  #008B8B;
+  text-decoration: none;
+}
+
+/* Parte direita (imagem verde) */
+.right {
+  flex: 1;
+  background: #008080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right::after {
+  content:" " ;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  background-image: url(../img/LogoEtec.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 10;
+}

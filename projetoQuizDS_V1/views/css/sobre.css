@@ -1,0 +1,144 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Fundo */
+body {
+  min-height: 100vh;
+  background-color: #001820 ; 
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🔹 Navbar */
+ .navbar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+/*Logo */
+/* .logo {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #00e6e6;
+  letter-spacing: 1px;
+} */
+
+/* Menu */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #00e6e6;
+}
+
+/* Indicação de página atual */
+.navbar a.ativo {
+  color: #00e6e6;
+  font-weight: 600;
+} */
+
+/* Botão de login */
+.login-btn {
+  background: linear-gradient(90deg, #00bcd4, #2196f3);
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: linear-gradient(90deg, #2196f3, #00bcd4);
+}
+
+/* 🔹 Conteúdo principal */
+.container {
+  padding: 40px 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  backdrop-filter: blur(10px);
+  max-width: 800px;
+  margin-top: 120px;
+  background: linear-gradient(to bottom right, #308788, #4E8E82, #6F9C7F, #9ABF84);
+
+}
+
+/* Título */
+.container h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #e0f7fa;
+  margin-bottom: 25px;
+}
+
+/* Parágrafos */
+.container p {
+  font-size: 1em;
+  color: #e0f7fa;
+  line-height: 1.6em;
+  margin-bottom: 15px;
+}
+
+/* Lista de disciplinas */
+.container ul {
+  list-style-type: none;
+  margin: 15px 0;
+  padding-left: 10px;
+}
+
+.container ul li {
+  background: #2D7A72;
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #b2ebf2;
+  transition: transform 0.3s ease;
+}
+
+.container ul li:hover {
+  transform: translateX(5px);
+  color: #00e6e6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
